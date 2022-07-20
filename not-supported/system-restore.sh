@@ -204,7 +204,7 @@ then
 fi
 
 # Check if /mnt/ncdata exists
-if grep -q " /mnt/ncdata " /etc/mtab
+if grep -q "/mnt/ncdata" /etc/mtab
 then
     NCDATA_PART_EXISTS=yes
 fi
