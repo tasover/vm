@@ -12,7 +12,7 @@ source /var/scripts/fetch_lib.sh
 # Check for errors + debug code and abort if something isn't right
 # 1 = ON
 # 0 = OFF
-DEBUG=1
+DEBUG=0
 debug_mode
 
 # Check if root
@@ -285,13 +285,13 @@ fi
 mapfile -t NCDATA_ARCHIVES <<< "$NCDATA_ARCHIVES"
 
 # Check if the setup is correct
-if [ "$NCDATA_PART_EXISTS" != "$NCDATA_ARCHIVE_EXISTS" ]
-then
-    msg_box "Cannot restore the system since either the ncdata partition doesn't exist and is in the repository \
-or the partition exists and isn't in the repository."
-    restore_original_state
-    exit 1
-fi
+#if [ "$NCDATA_PART_EXISTS" != "$NCDATA_ARCHIVE_EXISTS" ]
+#then
+#    msg_box "Cannot restore the system since either the ncdata partition doesn't exist and is in the repository \
+#or the partition exists and isn't in the repository."
+#    restore_original_state
+#    exit 1
+#fi
 
 # Find valid archives
 for system_archive in "${SYSTEM_ARCHIVES[@]}"
